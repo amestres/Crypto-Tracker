@@ -13,7 +13,7 @@ boton.addEventListener("click", async () => {
     let nombre = response.data[i].name;
     let moneda = input.value;
     if(nombre == moneda){
-      addList(response.data[i]);
+      AddList(response.data[i]);
       i = response.data.length;
       encontrada = true;
       input.value = "";
@@ -24,7 +24,7 @@ boton.addEventListener("click", async () => {
   }
 });
 
-const addList = async (moneda) => {
+const AddList = async (moneda) => {
   let lista = document.querySelector(".container-lista");
   let div = document.createElement("div");
   div.className = `divNuevo moneda${moneda.name}`
@@ -38,4 +38,26 @@ const addList = async (moneda) => {
   div.appendChild(pSymbol);
   div.appendChild(pName);
 };
+
+const AddTrending = async () => {
+  let lista = document.querySelector(".container-lista-trending");
+  const response = await axios.get(`https://api.coingecko.com/api/v3/search/trending`);
+  for (let i = 0; i < response.data.coins.length; i++) {
+    let moneda = response.data.coins[i];
+    let div = document.createElement("div");
+    div.className = "divNuevo"
+    lista.appendChild(div);
+    let pSymbol = document.createElement("p");
+    pSymbol.textContent = moneda.item.symbol;
+    pSymbol.className = "pTrending"
+    let pName = document.createElement("p");
+    pName.textContent = moneda.item.name;
+    pName.className = "pTrending"
+    div.appendChild(pSymbol);
+    div.appendChild(pName);
+  }
+};
+
+
+AddTrending();
 
