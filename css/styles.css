@@ -80,6 +80,9 @@ h1{
 }
 
 .pNuevo{
+    width: 50%;
     font-size: 20px;
+    border: 1px solid black;
+    text-align: center;
 }
 
