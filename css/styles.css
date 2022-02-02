@@ -9,14 +9,15 @@
 
 .container-top{
     height: 15%;
-    border: 1px solid black;
     display: flex;
     flex-direction: row;
 }
 
 .container-bottom{
     height: 85%;
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .container-titulo{
@@ -40,5 +41,45 @@ h1{
 
 #nombre-moneda{
     margin-right: 10px;
+}
+
+.container-monedas{
+    margin-top: 20px;
+    width: 80%;
+    height: 90%;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.container-rotulos{
+    display: flex;
+    flex-direction: row;  
+    align-items: center;
+    justify-content: space-around;
+    border-bottom: 1px solid black;
+}
+
+.container-lista{
+    width: 100%;
+    height: 94%;
+    display: flex;
+    flex-direction: column;
+    overflow:auto;  /* Con esto ponemos una scrollbar dentro del div*/
+}
+
+#rotulo1,#rotulo2{
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+.divNuevo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.pNuevo{
+    font-size: 20px;
 }
 
