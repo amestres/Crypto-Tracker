@@ -6,11 +6,6 @@ const input = document.querySelector("#nombre-moneda");
 const boton = document.querySelector("#buscar");
 
 
-/*boton.addEventListener("click", async () => {
-    const response = await axios.get(`https://api.coingecko.com/api/v3/coins/${input.value}`);
-    addList(response.data);
-});*/
-
 boton.addEventListener("click", async () => {
   let encontrada = false;
   const response = await axios.get(`https://api.coingecko.com/api/v3/coins/list`);
