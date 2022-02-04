@@ -95,13 +95,23 @@ h1{
     text-align: center;
 }
 
-.pTrending{
+.pTrending-Simbolo{
     font-size: 20px;
-    text-align: center;
-    width: 50%;
+    width: 30%;
     text-align: left;
     margin-left: 20px;
+    margin-right: 5px;
 }
+
+.pTrending-Nombre{
+    font-size: 20px;
+    width: 70%;
+    text-align: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
 .myModal{
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -117,14 +127,67 @@ h1{
 }
 
 .modal-content {
-    background-color: #fefefe;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
+    height: 30%;
     width: 80%;
-  }
-
-  .texto-modal{
+    padding: 20px;
+    margin: auto;
+    background-color: #fefefe;
+    border: 1px solid #888;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
     font-size: 20px;
-  }
+}
+
+.modal-row1, .modal-row2{
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.container-imagen{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.imagen-moneda{
+    height:140px;
+    width: 140px;
+    margin-left: 30px;
+}
+
+.container-nombre-symbol{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.nombre-moneda, .simbolo-moneda{
+    width: 100%;
+}
+
+.nombre-moneda{
+    margin-top: 50px;
+}
+
+.simbolo-moneda{
+    margin-top: 10px;
+}
+
+.container-link-moneda{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    flex-direction: row;
+}
+
+.link-moneda{
+    margin-left: 30px;
+    margin-top: 20px;
+}
 
