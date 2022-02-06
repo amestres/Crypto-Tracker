@@ -1,3 +1,7 @@
+body {
+    font-family: 'Courier New', monospace;
+  }
+
 .container-main{
     position: absolute;
     width: 100%;
@@ -41,24 +45,37 @@ h1{
 }
 
 #nombre-moneda{
+    font-size: 16px;
+    width: 200px;
+    height: 30px;
     margin-right: 10px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+}
+
+#buscar{
+    height: 30px;
+    font-size: 16px;
+    font-family: 'Courier New', monospace;
 }
 
 
 .container-trending{
     margin-top: 20px;
-    width: 20%;
+    width: 30%;
     height: 90%;
     background-color: white;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 .container-monedas{
     margin-top: 20px;
-    width: 70%;
+    width: 60%;
     height: 90%;
     background-color: white;
     border: 1px solid black;
+    border-radius: 10px;
 }
 
 .container-rotulos{
@@ -87,6 +104,14 @@ h1{
     flex-direction: row;
     justify-content: space-around;
     margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.divNuevo:hover{
+    border: 1px solid grey;
+    border-radius: 20px;
+    box-shadow: 11px 9px 15px -8px #000000;
 }
 
 .pNuevo{
@@ -128,7 +153,7 @@ h1{
 
 .modal-content {
     height: 30%;
-    width: 80%;
+    width: 50%;
     padding: 20px;
     margin: auto;
     background-color: #fefefe;
@@ -149,7 +174,7 @@ h1{
 
 .container-imagen{
     height: 100%;
-    width: 20%;
+    width: 40%;
     display: flex;
     align-items: center;
 }
@@ -162,12 +187,12 @@ h1{
 
 .container-nombre-symbol{
     height: 100%;
-    width: 30%;
+    width: 50%;
     display: flex;
     flex-direction: column;
 }
 
-.nombre-moneda, .simbolo-moneda{
+.nombre-moneda, .simbolo-moneda .rank-moneda, .hash-moneda{
     width: 100%;
 }
 
@@ -181,7 +206,7 @@ h1{
 
 .container-link-moneda{
     height: 100%;
-    width: 30%;
+    width: 50%;
     display: flex;
     flex-direction: row;
 }

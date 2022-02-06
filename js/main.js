@@ -12,8 +12,9 @@ let contador = 0;
 boton.addEventListener("click", async () => {
   let encontrada = false;
   const response = await axios.get(`https://api.coingecko.com/api/v3/coins/list`);
-  for (let i = 0; i < response.data.length; i++) {
-    let nombre = response.data[i].name;
+
+  for (let i = 0; i < response.data.length; i++) {  //Bucle para comprobar si esa moneda ya ha sido añadida a la lista.
+    let nombre = response.data[i].name;             //En el caso de no estar en la lista llamamos a la función AddList pasandole la info de la moneda
     let moneda = input.value;
     if(nombre == moneda){ 
       if(!ArrayMonedas.includes(nombre)){
@@ -65,7 +66,18 @@ const AbrirInfo = async(id) =>{
   let nombre = document.querySelector(".nombre-moneda");
   nombre.textContent = `Nombre: ${response.data.name}`;
 
-  if(response.data.links.homepage[0] != null){
+  let rank = document.querySelector(".rank-moneda");
+  rank.textContent = `Rank: ${response.data.coingecko_rank}`;
+
+  let hash = document.querySelector(".hash-moneda");
+  if(response.data.hashing_algorithm === null){
+    hash.textContent = `No tiene`;
+  }
+  else{
+    hash.textContent = `Algoritmo de hashing: ${response.data.hashing_algorithm}`;
+  }
+  
+  if(response.data.links.homepage[0] != null){ //nos aseguramos de que existe un link de referencia antes de mostrarlo
     let link = document.querySelector(".link-moneda");
     link.textContent = response.data.links.homepage[0];
     link.href = response.data.links.homepage[0];
@@ -79,10 +91,11 @@ window.onclick = function(event) {  //captura el click afuera del modal y así p
   }
 }
 
-const AddTrending = async () => {
+const AddTrending = async () => {  //función que se inicia al entrar en la página y carga todas las monedas "trending" en una lista lateral
   let lista = document.querySelector(".container-lista-trending");
   const response = await axios.get(`https://api.coingecko.com/api/v3/search/trending`);
-  for (let i = 0; i < response.data.coins.length; i++) {
+
+  for (let i = 0; i < response.data.coins.length; i++) { //Hacemos un bucle para recorrer la varianle "response" y extraemos la moneda (coins) de esa iteración.
     let moneda = response.data.coins[i];
 
     let div = document.createElement("div");
@@ -99,6 +112,10 @@ const AddTrending = async () => {
     
     div.appendChild(pSymbol);
     div.appendChild(pName);
+
+    //let infoMoneda = await axios.get(`https://api.coingecko.com/api/v3/coins/${moneda.item.id}`);
+    //let monedaID = infoMoneda.data
+    //div.addEventListener("click", () => AddList(monedaID,true))
   }
 };
 
