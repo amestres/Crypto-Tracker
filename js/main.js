@@ -71,7 +71,7 @@ const AbrirInfo = async(id) =>{
 
   let hash = document.querySelector(".hash-moneda");
   if(response.data.hashing_algorithm === null){
-    hash.textContent = `No tiene`;
+    hash.textContent = `Algoritmo de hashing: no tiene`;
   }
   else{
     hash.textContent = `Algoritmo de hashing: ${response.data.hashing_algorithm}`;
